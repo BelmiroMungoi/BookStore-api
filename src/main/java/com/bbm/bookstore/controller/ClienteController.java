@@ -3,6 +3,7 @@ package com.bbm.bookstore.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +34,7 @@ public class ClienteController {
 	
 	@GetMapping(value = "/", produces = "application/json")
 	public ResponseEntity<List<Cliente>> listar(){
-		List<Cliente> clientes = clienteRepository.findAll();
+		List<Cliente> clientes = clienteRepository.findAll(Sort.by("nome"));
 		
 		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
 	}
