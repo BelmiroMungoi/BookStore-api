@@ -39,6 +39,13 @@ public class ClienteController {
 		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/{id}", produces = "application/json")
+	public ResponseEntity<Cliente> findById(@PathVariable("id") Long id){
+		Cliente cliente = clienteRepository.findById(id).get();
+		
+		return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
+	}
+	
 	@PutMapping("/")
 	public ResponseEntity<?> atualizar(@RequestBody Cliente cliente) {
 		if (cliente.getId() == null) {
