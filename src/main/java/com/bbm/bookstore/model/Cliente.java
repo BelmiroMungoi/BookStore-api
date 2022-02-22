@@ -18,6 +18,7 @@ public class Cliente {
 	private String endereco;
 	private String telefone;
 	private String sexo;
+	private String interesse;
 
 	@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
 	private boolean ativo;
@@ -60,6 +61,14 @@ public class Cliente {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getInteresse() {
+		return interesse;
+	}
+
+	public void setInteresse(String interesse) {
+		this.interesse = interesse;
 	}
 
 	public boolean isAtivo() {
