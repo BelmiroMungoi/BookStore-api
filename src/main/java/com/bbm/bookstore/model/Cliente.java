@@ -2,6 +2,7 @@ package com.bbm.bookstore.model;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,9 @@ public class Cliente {
 	private String endereco;
 	private String telefone;
 	private String sexo;
+
+	@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+	private boolean ativo;
 
 	public Long getId() {
 		return id;
@@ -56,6 +60,14 @@ public class Cliente {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	@Override
