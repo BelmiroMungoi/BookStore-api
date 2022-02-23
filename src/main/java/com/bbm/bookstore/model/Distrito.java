@@ -1,12 +1,17 @@
 package com.bbm.bookstore.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
-public class Distrito {
+@Entity
+public class Distrito implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;

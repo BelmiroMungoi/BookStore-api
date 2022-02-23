@@ -1,11 +1,16 @@
 package com.bbm.bookstore.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
-public class Provincia {
+@Entity
+public class Provincia implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;
