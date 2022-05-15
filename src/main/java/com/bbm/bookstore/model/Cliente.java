@@ -25,7 +25,7 @@ public class Cliente implements Serializable {
 	private String interesse;
 
 	@ManyToOne
-	private Provincia provincia;
+	private Provincias provincia;
 
 	@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
 	private boolean ativo;
@@ -86,11 +86,11 @@ public class Cliente implements Serializable {
 		this.ativo = ativo;
 	}
 
-	public Provincia getProvincia() {
+	public Provincias getProvincia() {
 		return provincia;
 	}
 
-	public void setProvincia(Provincia provincia) {
+	public void setProvincia(Provincias provincia) {
 		this.provincia = provincia;
 	}
 
