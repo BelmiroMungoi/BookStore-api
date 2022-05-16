@@ -11,6 +11,6 @@ import com.bbm.bookstore.model.Distritos;
 @Repository
 public interface DistritoRepository extends JpaRepository<Distritos, Long>{
 
-	@Query(nativeQuery = true, value = "select nome from distritos where provincia_id = ?1")
+	@Query(nativeQuery = true, value = "SELECT * FROM distritos WHERE provincia_id = ?1")
 	List<Distritos> findDistritoById(Long id);
 }
